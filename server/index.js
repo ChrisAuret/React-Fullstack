@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
+require('./models/Survey');
 
 mongoose.connect(keys.mongoURI);
 const app = express();
@@ -23,6 +24,7 @@ app.use(passport.session());
 // so we immidietly invoke that function  with app
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if(process.env.NODE_ENV === 'production'){
 
