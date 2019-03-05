@@ -8,9 +8,9 @@ const Survey = mongoose.model('surveys');
 
 module.exports = (app) => {
 
-app.get('/api/surveys/thanks', (req, res) => {
-    res.send('Thanks for completing the survey!');
-});
+    app.get('/api/surveys/thanks', (req, res) => {
+        res.send('Thanks for completing the survey!');
+    });
 
     app.post(
         '/api/surveys', requireLogin, requireCredits, async (req, res) => {
@@ -36,8 +36,13 @@ app.get('/api/surveys/thanks', (req, res) => {
                 const user = await req.user.save();
 
                 res.send(user);
-            } catch(err){
+            } catch (err) {
                 res.status(422).send(err);
             }
+        });
+
+        app.post('/api/surveys/webhooks', (req, res) => {
+            console.log(req.body);
+            res.send({});
         });
 }
