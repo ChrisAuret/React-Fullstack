@@ -1,11 +1,20 @@
 Heroku,
+
 Google+ API, (soon to be shut down)
+
 Redux,
+
 Redux Form
+
 Redux Thunk
+
 Stripe API,
+
 Sendgrid API,
-Materialize CSS
+
+Materialize CSS,
+
+MongoDB
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
